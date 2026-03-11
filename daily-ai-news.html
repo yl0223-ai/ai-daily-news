@@ -3,83 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>03月10日 AI前沿动态</title>
+    <title>03月11日 AI前沿动态</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #f5f5f5; color: #333; line-height: 1.6; padding: 16px; max-width: 800px; margin: 0 auto; }
-        .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 20px; border-radius: 12px; margin-bottom: 16px; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
         .header h1 { font-size: 20px; margin-bottom: 8px; }
         .meta { font-size: 12px; opacity: 0.8; }
-        .summary { background: white; padding: 16px; border-radius: 12px; margin-bottom: 16px; }
+        .summary {
+            background: white;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
         .summary h2 { font-size: 16px; margin-bottom: 12px; color: #1a1a2e; }
-        .cat-tag { display: inline-block; background: #e8f4fd; color: #0066cc; padding: 2px 8px; border-radius: 4px; font-size: 12px; margin-right: 8px; }
-        .summary-item { display: flex; flex-wrap: wrap; align-items: flex-start; margin-bottom: 10px; gap: 6px; }
-        .summary-title { display: block; background: #f5f5f5; padding: 4px 10px; border-radius: 4px; font-size: 13px; color: #333; margin-right: 6px; margin-bottom: 4px; }
-        .card { background: white; padding: 16px; border-radius: 12px; margin-bottom: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .card-header { display: flex; align-items: center; margin-bottom: 8px; }
-        .priority { font-size: 10px; padding: 2px 6px; border-radius: 4px; margin-right: 8px; font-weight: bold; }
+        .cat-tag {
+            display: inline-block;
+            background: #e8f4fd;
+            color: #0066cc;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+        .summary-item {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            gap: 6px;
+        }
+        .summary-title {
+            display: block;
+            background: #f5f5f5;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: #333;
+            margin-right: 6px;
+            margin-bottom: 4px;
+        }
+        .card {
+            background: white;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .priority {
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-right: 8px;
+            font-weight: bold;
+        }
         .priority.high { background: #ff4d4f; color: white; }
         .priority.medium { background: #faad14; color: white; }
         .priority.low { background: #d9d9d9; color: #666; }
         .title { font-size: 16px; font-weight: 600; color: #1a1a2e; flex: 1; }
         .body { font-size: 14px; color: #666; margin-bottom: 12px; }
-        .key-points { background: #f9f9f9; padding: 12px; border-radius: 8px; margin-bottom: 12px; }
-        .key-points li { font-size: 13px; color: #333; margin-bottom: 4px; list-style: none; padding-left: 12px; position: relative; }
-        .key-points li:before { content: "•"; position: absolute; left: 0; color: #0066cc; }
+        .key-points {
+            background: #f9f9f9;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+        .key-points li {
+            font-size: 13px;
+            color: #333;
+            margin-bottom: 4px;
+            list-style: none;
+            padding-left: 12px;
+            position: relative;
+        }
+        .key-points li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #0066cc;
+        }
+        .related {
+            background: #fff7e6;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            color: #d46b08;
+            margin-bottom: 8px;
+        }
         .source { font-size: 12px; color: #999; }
-        .section-title { font-size: 18px; font-weight: 600; color: #1a1a2e; margin: 20px 0 12px 0; padding-bottom: 8px; border-bottom: 2px solid #0066cc; }
-        .footer { text-align: center; padding: 20px; color: #999; font-size: 12px; }
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin: 20px 0 12px 0;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #0066cc;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #999;
+            font-size: 12px;
+        }
+        @media (max-width: 480px) {
+            body { padding: 12px; }
+            .header h1 { font-size: 18px; }
+            .title { font-size: 15px; }
+            .body { font-size: 13px; }
+        }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>📡 03月10日 AI前沿动态</h1>
+        <h1>📡 03月11日 AI前沿动态</h1>
         <div class="meta">自动汇总 | 24h | 共 9 条</div>
     </div>
 
     <div class="summary">
-        <h2>📌 要点速览</h2><div class="summary-item"><span class="cat-tag">模型前沿</span><span class="summary-title">港科大提出音频生成统一模型AudioX</span></div><div class="summary-item"><span class="cat-tag">产业动态</span><span class="summary-title">智谱正式上线AutoClaw推动AI平权</span><span class="summary-title">企业微信正式支持接入OpenClaw</span><span class="summary-title">IBM推出Granite 4.0 1B语音模型</span></div><div class="summary-item"><span class="cat-tag">算力追踪</span><span class="summary-title">ABB Robotics联合NVIDIA Omniverse实现工业级物理AI规模化部署</span><span class="summary-title">OpenAI和Google员工支持Anthropic起诉国防部</span><span class="summary-title">AI驱动的行业变革</span></div><div class="summary-item"><span class="cat-tag">初创&融资</span><span class="summary-title">OpenAI收购AI安全平台Promptfoo强化企业AI安全</span></div><div class="summary-item"><span class="cat-tag">研究关注</span><span class="summary-title">Yann LeCun团队揭示Transformer内部计算机制</span></div>
+        <h2>📌 要点速览</h2><div class="summary-item"><span class="cat-tag">产业动态</span><span class="summary-title">ChatGPT上线交互式可视化功能辅助学科理解</span><span class="summary-title">Amazon在官网和APP上线医疗AI助手</span><span class="summary-title">Google Photos允许用户选择传统搜索或AI Ask功能</span></div><div class="summary-item"><span class="cat-tag">算力追踪</span><span class="summary-title">NVIDIA与Thinking Machines Lab达成千兆瓦级战略合作</span><span class="summary-title">NVIDIA发布RTX PRO Server虚拟化游戏开发方案</span></div><div class="summary-item"><span class="cat-tag">初创&融资</span><span class="summary-title">AI法律科技公司Legora完成5.55亿美元D轮融资</span><span class="summary-title">Yann LeCun创办的AMI Labs完成10.3亿美元种子轮融资</span><span class="summary-title">Meta收购AI Agent社交网络Moltbook</span></div><div class="summary-item"><span class="cat-tag">研究关注</span><span class="summary-title">AI4S公司实现千万美元ARR并完成AI设计新分子商业化</span></div>
     </div>
-    <div class="content"><div class="section-title">模型前沿</div><div class="card">
+    <div class="content"><div class="section-title">产业动态</div>
+        <div class="card">
             <div class="card-header">
                 <span class="priority high">🔥</span>
-                <span class="title">港科大提出音频生成统一模型AudioX</span>
-            </div><div class="body">港科大郭毅可院士团队提出AudioX音频生成统一模型，基于Diffusion Transformer架构，支持多模态输入生成音效和音乐，在多项基准上达到SOTA。</div><ul class="key-points"><li>港科大提出音频生成统一模型AudioX</li><li>支持文本、视频、图像等多模态输入生成音频</li><li>论文被ICLR 2026接收</li></ul><div class="source">📌 来源: <a href="https://mp.weixin.qq.com/s/xxx" target="_blank">新智元</a></div></div><div class="section-title">产业动态</div><div class="card">
-            <div class="card-header">
-                <span class="priority high">🔥</span>
-                <span class="title">智谱正式上线AutoClaw推动AI平权</span>
-            </div><div class="body">智谱正式上线AutoClaw（中文名：澳龙），这是国内首个真·一键安装的本地版OpenClaw，预置50+热门Skills，支持一键接入飞书等即时通讯工具。</div><ul class="key-points"><li>智谱上线国内首个一键安装的本地版OpenClaw</li><li>预置50+热门Skills，支持一键接入飞书</li></ul><div class="source">📌 来源: <a href="https://mp.weixin.qq.com/s/ksLlPO58gnHgm2W-zVi4Rw" target="_blank">量子位</a></div></div><div class="card">
-            <div class="card-header">
-                <span class="priority high">🔥</span>
-                <span class="title">企业微信正式支持接入OpenClaw</span>
-            </div><div class="body">企业微信正式支持接入OpenClaw，企业成员可与AI助手直接对话，让AI主动处理业务、写入智能表格。管理员无需配置域名即可使用。</div><ul class="key-points"><li>企业微信正式支持接入OpenClaw</li><li>管理员无需配置域名，选择API模式即可接入</li></ul><div class="source">📌 来源: <a href="https://mp.weixin.qq.com/s/nvtED-ELdGiWCpEDWpfZnQ" target="_blank">机器之心</a></div></div><div class="card">
+                <span class="title">ChatGPT上线交互式可视化功能辅助学科理解</span>
+            </div><div class="body">用户现在可以直接与交互式可视化内容互动来理解数学和科学概念，而不仅是阅读静态图表或文字解释。该功能由OpenAI推出，旨在通过可视化方式提升学习体验和理解效率。</div><div class="insight">💡 多模态交互从生成图片延伸到教育场景，AI辅助学习能力持续深化</div>
+        <div class="card">
             <div class="card-header">
                 <span class="priority medium">📰</span>
-                <span class="title">IBM推出Granite 4.0 1B语音模型：面向边缘设备的紧凑多语言方案</span>
-            </div><div class="body">IBM在HuggingFace发布Granite 4.0 1B语音模型，这是一款紧凑、多语言、专为边缘设备设计的语音模型，支持多种语言的语音处理任务。</div><ul class="key-points"><li>IBM发布Granite 4.0 1B语音模型</li><li>模型专为边缘设备设计，支持多语言</li></ul><div class="source">📌 来源: <a href="https://huggingface.co/blog/ibm-granite/granite-4-speech" target="_blank">HuggingFace Blog</a></div></div><div class="section-title">算力追踪</div><div class="card">
+                <span class="title">Amazon在官网和APP上线医疗AI助手</span>
+            </div><div class="body">Amazon推出医疗AI助手，可回答健康问题、解读健康记录、管理处方续药、预约挂号等。该服务集成至Amazon平台，标志着其医疗健康AI产品正式面向消费者。</div><div class="insight">💡 科技巨头医疗AI助手进入消费者市场，健康AI应用竞争加剧</div>
+        <div class="card">
+            <div class="card-header">
+                <span class="priority medium">📰</span>
+                <span class="title">Google Photos允许用户选择传统搜索或AI Ask功能</span>
+            </div><div class="body">Google在Google Photos搜索界面新增选项，允许用户选择使用传统搜索或AI驱动的Ask Photos功能。此举是对用户抱怨AI搜索体验的妥协回应。</div><div class="insight">💡 用户对AI功能的不满促使科技公司调整产品策略，平衡创新与用户体验</div><div class="section-title">算力追踪</div>
+        <div class="card">
             <div class="card-header">
                 <span class="priority high">🔥</span>
-                <span class="title">ABB Robotics联合NVIDIA Omniverse实现工业级物理AI规模化部署</span>
-            </div><div class="body">ABB Robotics宣布采用NVIDIA Omniverse平台来交付工业级物理AI解决方案，vLLM为Jetson上的完全本地化AI助手提供支持，OpenClaw教程展示了如何在NVIDIA Jetson上服务Nemotron 3 Nano等MoE模型。</div><ul class="key-points"><li>ABB Robotics采用NVIDIA Omniverse实现工业级物理AI规模化部署</li><li>vLLM为Jetson本地AI助手提供支持</li><li>展示了在边缘设备上部署MoE模型的技术方案</li></ul><div class="source">📌 来源: <a href="https://blogs.nvidia.com/blog/abb-robotics-omniverse/" target="_blank">NVIDIA Blog</a></div></div><div class="card">
+                <span class="title">NVIDIA与Thinking Machines Lab达成千兆瓦级战略合作</span>
+            </div><div class="body">NVIDIA与Thinking Machines Lab宣布多年战略合作，计划部署至少一吉瓦的下一代NVIDIA Vera Rubin系统，支持Thinking Machines的前沿模型训练和规模化可定制AI平台。Vera Rubin平台部署预计明年年初完成。这一合作将显著提升Thinking Machines的模型训练能力，同时为NVIDIA带来重要的企业级客户订单。</div><div class="insight">💡 NVIDIA同时布局两家AI初创公司，展示其在AI基础设施领域的战略投资布局</div><div class="related">🔗 关联: [竞对]AMI Labs获10.3亿美元融资（同样获NVIDIA投资）</div>
+        <div class="card">
             <div class="card-header">
                 <span class="priority high">🔥</span>
-                <span class="title">OpenAI和Google员工支持Anthropic起诉国防部</span>
-            </div><div class="body">超过30名OpenAI和Google DeepMind员工签署声明，支持Anthropic起诉国防部的诉讼，回应了政府对AI军事应用的监管争议。</div><ul class="key-points"><li>超过30名OpenAI和Google DeepMind员工支持Anthropic</li><li>涉及对国防部AI军事应用政策的争议</li></ul><div class="source">📌 来源: <a href="https://techcrunch.com/2026/03/09/openai-and-google-employees-rush-to-anthropics-defense-in-dod-lawsuit/" target="_blank">TechCrunch</a></div></div><div class="card">
+                <span class="title">NVIDIA发布RTX PRO Server虚拟化游戏开发方案</span>
+            </div><div class="body">NVIDIA在GDC大会上展示新方案，将分散的GPU资源整合到统一的虚拟化环境中，让游戏开发团队能够跨越大世界、更复杂管线分布式协作。当前许多工作室仍依赖固定工位GPU硬件，新方案将提升资源利用率和团队协作效率。</div><div class="insight">💡 GPU虚拟化技术从云游戏延伸到游戏开发领域，推动内容生产效率升级</div><div class="section-title">初创&融资</div>
+        <div class="card">
+            <div class="card-header">
+                <span class="priority medium">📰</span>
+                <span class="title">AI法律科技公司Legora完成5.55亿美元D轮融资</span>
+            </div><div class="body">Legora作为面向律师的AI平台，完成5.55亿美元D轮融资，由Accel领投5500万美元，估值达5.55亿美元。此轮融资将推动其在美国市场的增长。AI法律工具市场持续火热，法律行业智能化转型加速。</div><div class="insight">💡 垂直领域AI应用持续获得资本认可，法律科技赛道估值水涨船高</div>
+        <div class="card">
+            <div class="card-header">
+                <span class="priority medium">📰</span>
+                <span class="title">Yann LeCun创办的AMI Labs完成10.3亿美元种子轮融资</span>
+            </div><div class="body">图灵奖得主、深度学习奠基人Yann LeCun创办的AMI Labs完成10.3亿美元种子轮融资，投资方包括淡马锡、贝索斯Bezos Expeditions、英特尔以及英伟达等。AMI Labs致力于构建'世界模型'，让AI系统理解物理世界运行规律，具备推理、规划和预测能力，突破当前大语言模型的局限。</div><div class="insight">💡 世界模型方向获得大额融资，LeCun挑战自回归LLM路线获得资本支持</div><div class="related">🔗 关联: [同一公司]NVIDIA投资（与NVIDIA-Thinking Machines合作同期宣布）</div>
+        <div class="card">
+            <div class="card-header">
+                <span class="priority medium">📰</span>
+                <span class="title">Meta收购AI Agent社交网络Moltbook</span>
+            </div><div class="body">Meta宣布收购Moltbook，这是一款因虚假帖子走红的AI Agent社交网络。Meta表示Moltbook通过'始终在线目录'连接AI Agent的方法具有创新性。</div><div class="insight">💡 Meta在AI Agent领域的收购布局加速，社交网络与AI融合趋势显现</div><div class="section-title">研究关注</div>
+        <div class="card">
             <div class="card-header">
                 <span class="priority high">🔥</span>
-                <span class="title">AI驱动的行业变革：2026年收入增长与生产力提升</span>
-            </div><div class="body">NVIDIA博客探讨AI如何为各行业推动收入增长、降低成本并提升生产力，指出当前模型并非'够用'，智能竞赛远未结束，更高阶的智能仍是追求目标。</div><ul class="key-points"><li>AI正在为各行业带来实际收入增长和成本降低</li><li>更高阶智能仍是AI发展的未来方向</li></ul><div class="source">📌 来源: <a href="https://blogs.nvidia.com/blog/state-of-ai-report-2026/" target="_blank">NVIDIA Blog</a></div></div><div class="section-title">初创&融资</div><div class="card">
-            <div class="card-header">
-                <span class="priority high">🔥</span>
-                <span class="title">OpenAI收购AI安全平台Promptfoo强化企业AI安全</span>
-            </div><div class="body">OpenAI宣布收购Promptfoo，这是一家AI安全平台，帮助企业在开发过程中识别和修复AI系统漏洞。Promptfoo被超过25%的财富500强企业使用。</div><ul class="key-points"><li>OpenAI收购AI安全平台Promptfoo</li><li>Promptfoo被超过25%财富500强企业使用</li><li>将整合到OpenAI Frontier平台</li></ul><div class="source">📌 来源: <a href="https://openai.com/index/openai-to-acquire-promptfoo" target="_blank">OpenAI</a></div></div><div class="section-title">研究关注</div><div class="card">
-            <div class="card-header">
-                <span class="priority high">🔥</span>
-                <span class="title">Yann LeCun团队揭示Transformer内部计算机制</span>
-            </div><div class="body">纽约大学Yann LeCun团队发表论文，研究Transformer中大值激活和Attention Sink现象，证明共并非必然，为量化部署提供优化思路。</div><ul class="key-points"><li>Yann LeCun团队揭示Transformer内部计算机制</li><li>大值激活与Attention Sink共并非必然</li><li>为量化部署和长上下文推理提供优化思路</li></ul><div class="source">📌 来源: <a href="https://arxiv.org/pdf/2603.05498" target="_blank">机器之心</a></div></div>
+                <span class="title">AI4S公司实现千万美元ARR并完成AI设计新分子商业化</span>
+            </div><div class="body">2026年AI正从单一工具赋能转向场景深度共生，前沿科研与新材料研发领域迎来Agentic AI驱动的效率革命。某AI4S公司完成AI设计新分子的商业化应用，标志着AI在科学研究领域的商业化突破。</div><div class="insight">💡 AI for Science从科研突破进入商业化阶段，新材料研发效率有望大幅提升</div>
     </div>
     <div class="footer">
-        更新时间: 2026-03-10 10:17
+        更新时间: 2026-03-11 09:23
     </div>
 </body>
 </html>
